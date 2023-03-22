@@ -18,7 +18,7 @@ import { startTransition, useState } from 'react';
 import TimesTable from './times-table';
 
 function App() {
-  const [nodes, setNodes] = useState(500);
+  const [nodes, setNodes] = useState(250);
   const handleChange = (nodes) => {
     startTransition(() => {
       setNodes(nodes);
@@ -41,6 +41,7 @@ function App() {
       </Text>
 
       <NumberInput
+        mt={3}
         maxW={1000}
         min={0}
         mr="2rem"
