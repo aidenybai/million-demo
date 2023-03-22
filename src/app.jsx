@@ -18,7 +18,7 @@ import { startTransition, useState } from 'react';
 import TimesTable from './times-table';
 
 function App() {
-  const [nodes, setNodes] = useState(250);
+  const [nodes, setNodes] = useState(1000);
   const handleChange = (nodes) => {
     startTransition(() => {
       setNodes(nodes);

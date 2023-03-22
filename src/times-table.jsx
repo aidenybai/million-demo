@@ -32,11 +32,13 @@ function Row({ product, count, random }) {
         </code>
       </td>
       <div>
-        {Array(50)
+        {Array(100)
           .fill(0)
           .map(() => (
             <div>
-              <div></div>
+              <div>
+                <div></div>
+              </div>
             </div>
           ))}
       </div>
