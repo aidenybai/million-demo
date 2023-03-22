@@ -66,7 +66,7 @@ const TimesTable = ({ nodes, mode }) => {
 
   return (
     <Stack direction="column" spacing={5}>
-      <Flex justifyContent="center">
+      <Flex justifyContent="center" flexDirection="column">
         <Text size="sm" mb={3}>
           {descriptions[mode]}
         </Text>
@@ -74,7 +74,6 @@ const TimesTable = ({ nodes, mode }) => {
       </Flex>
 
       <Button
-        mt={6}
         colorScheme="purple"
         variant="outline"
         onClick={() => {
