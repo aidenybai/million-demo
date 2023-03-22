@@ -25,7 +25,7 @@ function App() {
     });
   };
   return (
-    <Container p={4}>
+    <Container p={8}>
       <Heading mb={4}>Million Demo</Heading>
       <Text>
         The following is a random times table generator benchmark. It follows a
