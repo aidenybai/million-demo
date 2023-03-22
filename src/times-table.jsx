@@ -48,6 +48,13 @@ function Row({ product, count, random }) {
 
 const RowBlock = block(Row);
 
+const descriptions = {
+  react: 'High blocking time, but low delay in updating UI',
+  'react-fiber': 'Low blocking time, but high delay in updating UI',
+  million: 'Low blocking time, and low delay in updating UI',
+  'million-fiber': 'Low blocking time, and high delay in updating UI',
+};
+
 const TimesTable = ({ nodes, mode }) => {
   const [count, setCount] = useState(0);
 
@@ -59,6 +66,8 @@ const TimesTable = ({ nodes, mode }) => {
 
   return (
     <Stack direction="column" spacing={3}>
+      <Text size="sm">{descriptions[mode]}</Text>
+
       <Flex justifyContent="center">
         <LagRadar size={200} />
       </Flex>
