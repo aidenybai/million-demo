@@ -18,7 +18,7 @@ import { useState } from 'react';
 import TimesTable from './times-table';
 
 function App() {
-  const [nodes, setNodes] = useState(100);
+  const [nodes, setNodes] = useState(500);
   const handleChange = (nodes) => setNodes(nodes);
   return (
     <Container p={4}>

@@ -58,7 +58,7 @@ const TimesTable = ({ nodes, mode }) => {
   return (
     <Stack direction="column" spacing={3}>
       <Flex justifyContent="center">
-        <LagRadar frames={120} inset={5} size={200} />
+        <LagRadar size={200} />
       </Flex>
 
       <Button
