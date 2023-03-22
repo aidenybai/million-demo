@@ -10,6 +10,7 @@ specifiers:
   million: ^2.1.0
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-github-corner: ^2.5.0
   react-lag-radar: ^1.0.0
   vite: ^4.2.1
 
@@ -22,6 +23,7 @@ dependencies:
   million: 2.1.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-github-corner: 2.5.0_react@18.2.0
   react-lag-radar: 1.0.0_react@18.2.0
 
 devDependencies:
@@ -2220,6 +2222,15 @@ packages:
       react-clientside-effect: 1.2.6_react@18.2.0
       use-callback-ref: 1.3.0_react@18.2.0
       use-sidecar: 1.1.2_react@18.2.0
+    dev: false
+
+  /react-github-corner/2.5.0_react@18.2.0:
+    resolution: {integrity: sha512-ofds9l6n61LJc6ML+jSE6W9ZSQvATcMR9evnHPXua1oDYj289HKODnVqFUB/g2a4ieBjDHw416iHP3MjqnU76Q==}
+    engines: {node: '>= 4.0.0'}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:
