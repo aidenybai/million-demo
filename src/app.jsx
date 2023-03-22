@@ -7,6 +7,7 @@ import {
   NumberInput,
   NumberInputField,
   NumberInputStepper,
+  Stack,
   Tab,
   TabList,
   TabPanel,
