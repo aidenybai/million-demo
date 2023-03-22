@@ -1,5 +1,6 @@
 import {
   Button,
+  Flex,
   Stack,
   Table,
   TableContainer,
@@ -8,7 +9,6 @@ import {
   Th,
   Thead,
   Tr,
-  Flex,
 } from '@chakra-ui/react';
 import { block, For } from 'million/react';
 import { startTransition, useState } from 'react';

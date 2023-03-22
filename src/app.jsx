@@ -26,7 +26,7 @@ function App() {
   };
   return (
     <Container p={8}>
-      <Stack direction="column" spacing={5}>
+      <Stack direction="column" spacing={3}>
         <Heading>Million vs React Demo</Heading>
         <Text>
           The following is a random times table generator benchmark. It follows
