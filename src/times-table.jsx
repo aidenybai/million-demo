@@ -67,10 +67,10 @@ const TimesTable = ({ nodes, mode }) => {
   return (
     <Stack direction="column" spacing={5}>
       <Flex justifyContent="center" alignItems="center" flexDirection="column">
-        <Text size="xs" mb={3}>
+        <LagRadar size={200} />
+        <Text fontSize="xs" mb={3}>
           {descriptions[mode]}
         </Text>
-        <LagRadar size={200} />
       </Flex>
 
       <Button
