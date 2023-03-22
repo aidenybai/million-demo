@@ -15,6 +15,7 @@ import {
   Tabs,
   Text,
 } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { startTransition, useState } from 'react';
 import TimesTable from './times-table';
 
@@ -30,9 +31,12 @@ function App() {
       <Stack direction="column" spacing={3}>
         <Heading>Million vs React Demo</Heading>
         <Text>
-          The following is a random times table generator benchmark. It follows
-          a comparison between React and Million, along with its fiber
-          equivalents.
+          The following is a random times table generator benchmark (
+          <Link href="https://github.com/aidenybai/million-demo" isExternal>
+            source <ExternalLinkIcon mx="2px" />
+          </Link>
+          ). It follows a comparison between React and Million, along with its
+          fiber equivalents.
         </Text>
         <Text>
           In order to invoke a re-render, click the "Increment "button below.
