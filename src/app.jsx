@@ -58,7 +58,7 @@ function App() {
         <TabList>
           <Tab>React</Tab>
           <Tab>React Fiber</Tab>
-          <Tab>Million</Tab>
+          <Tab>⚡ Million</Tab>
           <Tab>Million Fiber</Tab>
         </TabList>
         <TabPanels>
