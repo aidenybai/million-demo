@@ -45,8 +45,9 @@ function App() {
           nodes to stimulate diffing in order to measure performance.
         </Text>
         <Text>
-          You can adjust the number of rows by using the slider or the number
-          input.
+          You can adjust the number of rows by using the the number input. Make
+          sure to adjust if you can't see any performance difference or your
+          screen freezes.
         </Text>
       </Stack>
 
