@@ -8,6 +8,7 @@ import {
   Th,
   Thead,
   Tr,
+  Flex,
 } from '@chakra-ui/react';
 import { block, For } from 'million/react';
 import { startTransition, useState } from 'react';
@@ -31,7 +32,7 @@ function Row({ product, count, random }) {
         </code>
       </td>
       <div>
-        {Array(50)
+        {Array(100)
           .fill(0)
           .map(() => (
             <div>
@@ -55,26 +56,26 @@ const TimesTable = ({ nodes, mode }) => {
   }
 
   return (
-    <Stack direction="column">
-      <LagRadar size={200} />
+    <Stack direction="column" spacing={3}>
+      <Flex justifyContent="center">
+        <LagRadar frames={120} inset={5} size={200} />
+      </Flex>
 
-      <Stack direction="column" spacing={3} mt={6}>
-        <Button
-          colorScheme="purple"
-          variant="outline"
-          onClick={() => {
-            if (mode === 'react-fiber' || mode === 'million-fiber') {
-              startTransition(() => {
-                setCount(count + 1);
-              });
-            } else {
+      <Button
+        colorScheme="purple"
+        variant="outline"
+        onClick={() => {
+          if (mode === 'react-fiber' || mode === 'million-fiber') {
+            startTransition(() => {
               setCount(count + 1);
-            }
-          }}
-        >
-          <Text fontSize="md">Increment ({count})</Text>
-        </Button>
-      </Stack>
+            });
+          } else {
+            setCount(count + 1);
+          }
+        }}
+      >
+        <Text fontSize="md">Increment ({count})</Text>
+      </Button>
 
       <TableContainer>
         <Table size="md">

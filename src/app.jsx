@@ -1,6 +1,6 @@
 import {
+  Code,
   Container,
-  Flex,
   Heading,
   NumberDecrementStepper,
   NumberIncrementStepper,
@@ -28,28 +28,27 @@ function App() {
         comparison between React and Million, along with its fiber equivalents.
       </Text>
       <Text fontStyle="italic" size="sm" my={3}>
-        Caveat to note: Every row contains 50 empty nodes to stimulate diffing
-        in order to measure performance.
+        Caveat to note: Every row contains 100 empty <Code>{'<div />'}</Code>{' '}
+        nodes to stimulate diffing in order to measure performance.
       </Text>
       <Text>
         You can adjust the number of rows by using the slider or the number
         input.
       </Text>
-      <Flex mt={3}>
-        <NumberInput
-          maxW={1000}
-          min={0}
-          mr="2rem"
-          value={nodes}
-          onChange={handleChange}
-        >
-          <NumberInputField placeholder="Enter number of rows" />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
-      </Flex>
+
+      <NumberInput
+        maxW={1000}
+        min={0}
+        mr="2rem"
+        value={nodes}
+        onChange={handleChange}
+      >
+        <NumberInputField placeholder="Enter number of rows" />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
       <Tabs variant="soft-rounded" colorScheme="purple" mt={3}>
         <TabList>
           <Tab>React</Tab>
