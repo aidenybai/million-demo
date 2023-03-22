@@ -26,20 +26,28 @@ function App() {
   };
   return (
     <Container p={8}>
-      <Heading mb={4}>Million vs React Demo</Heading>
-      <Text>
-        The following is a random times table generator benchmark. It follows a
-        comparison between React and Million, along with its fiber equivalents.
-        In order to invoke a re-render, click the "Increment "button below.
-      </Text>
-      <Text fontStyle="italic" size="sm" my={3}>
-        Caveat to note: Every row contains 100 empty <Code>{'<div />'}</Code>{' '}
-        nodes to stimulate diffing in order to measure performance.
-      </Text>
-      <Text>
-        You can adjust the number of rows by using the slider or the number
-        input.
-      </Text>
+      <Stack direction="column" spacing={5}>
+        <Heading>Million vs React Demo</Heading>
+        <Text>
+          The following is a random times table generator benchmark. It follows
+          a comparison between React and Million, along with its fiber
+          equivalents.
+        </Text>
+        <Text>
+          In order to invoke a re-render, click the "Increment "button below.
+          The "Lag" radar indicates blocking time, but does not account for the
+          time it takes to update the UI. Notice the time it takes to update the
+          UI after you click to get an idea for update time.
+        </Text>
+        <Text fontStyle="italic" size="sm">
+          Caveat to note: Every row contains 100 empty <Code>{'<div />'}</Code>{' '}
+          nodes to stimulate diffing in order to measure performance.
+        </Text>
+        <Text>
+          You can adjust the number of rows by using the slider or the number
+          input.
+        </Text>
+      </Stack>
 
       <NumberInput
         mt={3}
