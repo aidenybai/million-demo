@@ -1,7 +1,9 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Code,
   Container,
   Heading,
+  Link,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
@@ -15,7 +17,6 @@ import {
   Tabs,
   Text,
 } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { startTransition, useState } from 'react';
 import TimesTable from './times-table';
 
