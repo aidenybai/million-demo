@@ -65,7 +65,7 @@ const TimesTable = ({ nodes, mode }) => {
   }
 
   return (
-    <Stack direction="column" spacing={3}>
+    <Stack direction="column" spacing={5}>
       <Flex justifyContent="center">
         <Text size="sm" mb={3}>
           {descriptions[mode]}
