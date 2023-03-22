@@ -26,10 +26,11 @@ function App() {
   };
   return (
     <Container p={8}>
-      <Heading mb={4}>Million Demo</Heading>
+      <Heading mb={4}>Million vs React Demo</Heading>
       <Text>
         The following is a random times table generator benchmark. It follows a
         comparison between React and Million, along with its fiber equivalents.
+        In order to invoke a re-render, click the "Increment "button below.
       </Text>
       <Text fontStyle="italic" size="sm" my={3}>
         Caveat to note: Every row contains 100 empty <Code>{'<div />'}</Code>{' '}
