@@ -14,12 +14,16 @@ import {
   Tabs,
   Text,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { startTransition, useState } from 'react';
 import TimesTable from './times-table';
 
 function App() {
   const [nodes, setNodes] = useState(500);
-  const handleChange = (nodes) => setNodes(nodes);
+  const handleChange = (nodes) => {
+    startTransition(() => {
+      setNodes(nodes);
+    });
+  };
   return (
     <Container p={4}>
       <Heading mb={4}>Million Demo</Heading>
