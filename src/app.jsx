@@ -28,24 +28,29 @@ import {
   ModalCloseButton,
   Button,
 } from '@chakra-ui/react';
-import { startTransition, useEffect, useState } from 'react';
+import { startTransition, useState } from 'react';
 import GithubCorner from 'react-github-corner';
 import TimesTable from './times-table';
 
 function App() {
   const [nodes, setNodes] = useState(1000);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
   const handleChange = (nodes) => {
     startTransition(() => {
       setNodes(nodes);
     });
   };
-  useEffect(() => {
-    onOpen();
-  }, []);
   return (
     <>
-      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+      <Modal
+        blockScrollOnMount={false}
+        isOpen={isOpen}
+        onClose={() => {
+          startTransition(() => {
+            onClose();
+          });
+        }}
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Million vs. React Demo</ModalHeader>
@@ -125,7 +130,7 @@ function App() {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <Container p={8}>
+      <Container p={6}>
         <Stack direction="column" spacing={3}>
           <Heading>Million vs. React Demo</Heading>
           <Text>
@@ -164,18 +169,22 @@ function App() {
             <Tab>Million Fiber</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>
-              <TimesTable nodes={nodes} mode="react" />
-            </TabPanel>
-            <TabPanel>
-              <TimesTable nodes={nodes} mode="react-fiber" />
-            </TabPanel>
-            <TabPanel>
-              <TimesTable nodes={nodes} mode="million" />
-            </TabPanel>
-            <TabPanel>
-              <TimesTable nodes={nodes} mode="million-fiber" />
-            </TabPanel>
+            {!isOpen && (
+              <>
+                <TabPanel>
+                  <TimesTable nodes={nodes} mode="react" />
+                </TabPanel>
+                <TabPanel>
+                  <TimesTable nodes={nodes} mode="react-fiber" />
+                </TabPanel>
+                <TabPanel>
+                  <TimesTable nodes={nodes} mode="million" />
+                </TabPanel>
+                <TabPanel>
+                  <TimesTable nodes={nodes} mode="million-fiber" />
+                </TabPanel>
+              </>
+            )}
           </TabPanels>
         </Tabs>
       </Container>
