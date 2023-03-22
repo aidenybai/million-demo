@@ -32,7 +32,7 @@ function Row({ product, count, random }) {
         </code>
       </td>
       <div>
-        {Array(100)
+        {Array(50)
           .fill(0)
           .map(() => (
             <div>
