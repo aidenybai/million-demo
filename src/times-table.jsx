@@ -64,6 +64,7 @@ const TimesTable = ({ nodes, mode }) => {
       </Flex>
 
       <Button
+        mt={3}
         colorScheme="purple"
         variant="outline"
         onClick={() => {
