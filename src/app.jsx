@@ -54,7 +54,7 @@ function App() {
           <NumberDecrementStepper />
         </NumberInputStepper>
       </NumberInput>
-      <Tabs variant="soft-rounded" colorScheme="purple" mt={3}>
+      <Tabs isLazy={true} variant="soft-rounded" colorScheme="purple" mt={3}>
         <TabList>
           <Tab>React</Tab>
           <Tab>React Fiber</Tab>
