@@ -9,9 +9,10 @@ import {
   Th,
   Thead,
   Tr,
+  SkeletonText,
 } from '@chakra-ui/react';
 import { block, For } from 'million/react';
-import { startTransition, useState } from 'react';
+import { startTransition, useEffect, useState } from 'react';
 import LagRadar from 'react-lag-radar';
 
 function Row({ product, count, random }) {
@@ -55,14 +56,20 @@ const descriptions = {
   'million-fiber': 'Low blocking time, and high delay in updating UI',
 };
 
+const globalArray = Array(1000);
+for (let i = 0; i < 1000; i++) {
+  globalArray[i] = Math.floor(Math.random() * 10);
+}
+
 const TimesTable = ({ nodes, mode }) => {
   const [count, setCount] = useState(0);
+  const [array, setArray] = useState([]);
 
-  const array = [];
-
-  for (let i = 0; i < nodes; i++) {
-    array.push(Math.floor(Math.random() * 10));
-  }
+  useEffect(() => {
+    startTransition(() => {
+      setArray(globalArray.slice(0, nodes));
+    });
+  }, []);
 
   return (
     <Stack direction="column" spacing={5}>
@@ -77,7 +84,7 @@ const TimesTable = ({ nodes, mode }) => {
         colorScheme="purple"
         variant="outline"
         onClick={() => {
-          if (mode === 'react-fiber' || mode === 'million-fiber') {
+          if (mode === 'react-fiber') {
             startTransition(() => {
               setCount(count + 1);
             });
@@ -89,35 +96,42 @@ const TimesTable = ({ nodes, mode }) => {
         <Text fontSize="md">Increment ({count})</Text>
       </Button>
 
-      <TableContainer>
-        <Table size="md">
-          <Thead>
-            <Tr>
-              <Th>Random</Th>
-              <Th>Count</Th>
-              <Th>Product</Th>
-              <Th>Equation</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {mode === 'million' ? (
-              <For each={array}>
-                {(random) => (
-                  <RowBlock
-                    product={count * random}
-                    random={random}
-                    count={count}
-                  />
-                )}
-              </For>
-            ) : (
-              array.map((random) => (
-                <Row product={count * random} random={random} count={count} />
-              ))
-            )}
-          </Tbody>
-        </Table>
-      </TableContainer>
+      <SkeletonText
+        isLoaded={array.length !== 0}
+        noOfLines={9}
+        spacing="3"
+        skeletonHeight="4"
+      >
+        <TableContainer>
+          <Table size="md">
+            <Thead>
+              <Tr>
+                <Th>Random</Th>
+                <Th>Count</Th>
+                <Th>Product</Th>
+                <Th>Equation</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {mode === 'million' ? (
+                <For each={array}>
+                  {(random) => (
+                    <RowBlock
+                      product={count * random}
+                      random={random}
+                      count={count}
+                    />
+                  )}
+                </For>
+              ) : (
+                array.map((random) => (
+                  <Row product={count * random} random={random} count={count} />
+                ))
+              )}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      </SkeletonText>
     </Stack>
   );
 };

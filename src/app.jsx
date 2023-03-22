@@ -1,9 +1,18 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import {
+  Button,
   Code,
   Container,
   Heading,
   Link,
+  ListItem,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
@@ -17,16 +26,7 @@ import {
   Tabs,
   Text,
   UnorderedList,
-  ListItem,
   useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Button,
 } from '@chakra-ui/react';
 import { startTransition, useState } from 'react';
 import GithubCorner from 'react-github-corner';
@@ -166,26 +166,20 @@ function App() {
             <Tab>React</Tab>
             <Tab>React Fiber</Tab>
             <Tab>⚡ Million</Tab>
-            <Tab>Million Fiber</Tab>
           </TabList>
-          <TabPanels>
-            {!isOpen && (
-              <>
-                <TabPanel>
-                  <TimesTable nodes={nodes} mode="react" />
-                </TabPanel>
-                <TabPanel>
-                  <TimesTable nodes={nodes} mode="react-fiber" />
-                </TabPanel>
-                <TabPanel>
-                  <TimesTable nodes={nodes} mode="million" />
-                </TabPanel>
-                <TabPanel>
-                  <TimesTable nodes={nodes} mode="million-fiber" />
-                </TabPanel>
-              </>
-            )}
-          </TabPanels>
+          {!isOpen && (
+            <TabPanels>
+              <TabPanel>
+                <TimesTable nodes={nodes} mode="react" />
+              </TabPanel>
+              <TabPanel>
+                <TimesTable nodes={nodes} mode="react-fiber" />
+              </TabPanel>
+              <TabPanel>
+                <TimesTable nodes={nodes} mode="million" />
+              </TabPanel>
+            </TabPanels>
+          )}
         </Tabs>
       </Container>
       <GithubCorner href="https://github.com/aidenybai/million" />
