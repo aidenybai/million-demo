@@ -4,10 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="https://millionjs.org/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="shortcut icon"
+      href="https://millionjs.org/favicon.svg"
+      type="image/svg+xml"
+    />
     <title>Million.js Demo</title>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/perf-monitor@0.6.0/dist/component.js"
+      type="module"
+    ></script>
+    <script type="module">
+      import {
+        ema,
+        emaPush,
+      } from 'https://cdn.jsdelivr.net/npm/perf-monitor@0.6.0/dist/index.js';
+
+      const testEMA = ema();
+      document.querySelector('perf-monitor').observe('test', testEMA);
+
+      function tick() {
+        let t0 = performance.now();
+        for (let i = 0; i < 100000; i++) {
+          Math.random();
+        }
+        emaPush(testEMA, performance.now() - t0);
+        setTimeout(tick, 30);
+      }
+      tick();
+    </script>
   </head>
   <body>
+    <perf-monitor fps mem></perf-monitor>
     <div id="root"></div>
     <script type="module" src="./src/index.jsx"></script>
   </body>

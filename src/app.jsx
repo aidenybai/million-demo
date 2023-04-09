@@ -132,7 +132,7 @@ function App() {
           </TabPanels>
         </Tabs>
       </Container>
-      <GithubCorner href="https://github.com/aidenybai/million" />
+      <GithubCorner direction="left" href="https://github.com/aidenybai/million" />
     </>
   );
 }
