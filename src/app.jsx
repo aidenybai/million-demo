@@ -24,7 +24,7 @@ import GithubCorner from 'react-github-corner';
 import TimesTable from './times-table';
 
 function App() {
-  const [nodes, setNodes] = useState(1000);
+  const [nodes, setNodes] = useState(10);
   const handleChange = (nodes) => {
     startTransition(() => {
       setNodes(nodes);
@@ -82,8 +82,12 @@ function App() {
                 .
               </ListItem>
               <ListItem>
-                Every row contains 50 empty <Code>{'<td />'}</Code> nodes to
-                stimulate diffing in order to measure performance.
+                Every row contains 3000 empty <Code>{'<td />'}</Code> nodes to
+                stimulate diffing in order to measure performance.{' '}
+                <u>
+                  This is not representative of real React apps, it's just to
+                  show where Million.js performs well.
+                </u>
               </ListItem>
               <ListItem>
                 Should not be used as a benchmark for real-world applications
