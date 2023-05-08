@@ -19,21 +19,17 @@ function Row({ product, count, random }) {
         </code>
       </td>
       <div>
-        {Array(100)
+        {Array(50)
           .fill(0)
           .map(() => (
-            <div>
-              <div>
-                <div></div>
-              </div>
-            </div>
+            <td></td>
           ))}
       </div>
     </tr>
   );
 }
 
-const RowBlock = block(Row);
+const RowBlock = block(Row, { mode: 'island ' });
 
 function TableView({ array, count, mode }) {
   return (
