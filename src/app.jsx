@@ -82,7 +82,7 @@ function App() {
                 .
               </ListItem>
               <ListItem>
-                Every row contains 100 empty <Code>{'<div />'}</Code> nodes to
+                Every row contains 50 empty <Code>{'<td />'}</Code> nodes to
                 stimulate diffing in order to measure performance.
               </ListItem>
               <ListItem>
@@ -132,7 +132,10 @@ function App() {
           </TabPanels>
         </Tabs>
       </Container>
-      <GithubCorner direction="left" href="https://github.com/aidenybai/million" />
+      <GithubCorner
+        direction="left"
+        href="https://github.com/aidenybai/million"
+      />
     </>
   );
 }
