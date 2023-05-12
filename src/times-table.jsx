@@ -39,7 +39,7 @@ const TimesTable = ({ nodes, mode }) => {
         colorScheme="purple"
         variant="outline"
         onClick={() => {
-          if (mode === 'react-fiber') {
+          if (mode.includes('fiber')) {
             startTransition(() => {
               setCount(count + 1);
             });

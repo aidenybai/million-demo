@@ -24,7 +24,7 @@ import GithubCorner from 'react-github-corner';
 import TimesTable from './times-table';
 
 function App() {
-  const [nodes, setNodes] = useState(10);
+  const [nodes, setNodes] = useState(1000);
   const handleChange = (nodes) => {
     startTransition(() => {
       setNodes(nodes);
@@ -51,7 +51,7 @@ function App() {
             Instructions
           </Heading>
           <Text>
-            In order to invoke a re-render, click the "Increment "button below.
+            In order to invoke a re-render, click the "Increment" button below.
             The "Lag" radar indicates blocking time, but does not account for
             the time it takes to update the UI. Notice the time it takes to
             update the UI after you click to get an idea for update time.
@@ -82,8 +82,8 @@ function App() {
                 .
               </ListItem>
               <ListItem>
-                Every row contains 3000 empty <Code>{'<td />'}</Code> nodes to
-                stimulate diffing in order to measure performance.{' '}
+                Every row contains 100 static, hidden <Code>{'<td />'}</Code>{' '}
+                nodes to stimulate diffing in order to measure performance.{' '}
                 <u>
                   This is not representative of real React apps, it's just to
                   show where Million.js performs well.

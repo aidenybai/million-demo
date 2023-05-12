@@ -1,9 +1,13 @@
 import { Table, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
-import { block, For } from 'million/react';
+import { block, For } from 'million';
+
+const buffer = Array(100)
+  .fill(0)
+  .map((_, i) => <td style={{ display: 'none' }}>{i}</td>);
 
 function Row({ product, count, random }) {
   return (
-    <tr>
+    <tr key={String(random * count)}>
       <td>
         <code>{random}</code>
       </td>
@@ -18,17 +22,7 @@ function Row({ product, count, random }) {
           {random} * {count} = {product}
         </code>
       </td>
-      <div>
-        {Array(1000)
-          .fill(0)
-          .map((_, i) => (
-            <td>
-              <td>
-                <td>{i}</td>
-              </td>
-            </td>
-          ))}
-      </div>
+      {buffer}
     </tr>
   );
 }
@@ -56,6 +50,7 @@ function TableView({ array, count, mode }) {
                     product={count * random}
                     random={random}
                     count={count}
+                    key={String(random * count)}
                   />
                 );
               }}
