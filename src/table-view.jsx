@@ -1,5 +1,5 @@
 import { Table, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
-import { block, For } from 'million';
+import { block, For } from 'million/react';
 
 const buffer = Array(100)
   .fill(0)
