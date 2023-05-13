@@ -37,7 +37,7 @@ const TimesTable = ({ nodes, mode }) => {
 
       <Button
         colorScheme="purple"
-        variant="outline"
+        variant="solid"
         onClick={() => {
           if (mode.includes('fiber')) {
             startTransition(() => {
