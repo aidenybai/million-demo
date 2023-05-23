@@ -7,7 +7,7 @@ const buffer = Array(100)
 
 function Row({ product, count, random }) {
   return (
-    <tr key={String(random * count)}>
+    <tr>
       <td>
         <code>{random}</code>
       </td>
@@ -50,7 +50,6 @@ function TableView({ array, count, mode }) {
                     product={count * random}
                     random={random}
                     count={count}
-                    key={String(random * count)}
                   />
                 );
               }}
