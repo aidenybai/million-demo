@@ -1,28 +1,24 @@
 import { Table, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
 import { block, For } from 'million/react';
 
-const buffer = Array(100)
-  .fill(0)
-  .map((_, i) => <td style={{ display: 'none' }}>{i}</td>);
-
 function Row({ product, count, random }) {
   return (
     <tr>
-      <td>
-        <code>{random}</code>
-      </td>
-      <td>
-        <code>{count}</code>
-      </td>
-      <td>
-        <code>{product}</code>
-      </td>
-      <td>
+      <td className="w-full text-center">
         <code>
           {random} * {count} = {product}
         </code>
+        {Array(50)
+          .fill(0)
+          .map((_, i) => (
+            <div className="hidden">{i}</div>
+          ))}
       </td>
-      {buffer}
+      {Array(100)
+        .fill(0)
+        .map((_, i) => (
+          <td className="hidden">{i}</td>
+        ))}
     </tr>
   );
 }
@@ -34,11 +30,8 @@ function TableView({ array, count, mode }) {
     <TableContainer>
       <Table size="md">
         <Thead>
-          <Tr>
-            <Th>Random</Th>
-            <Th>Count</Th>
-            <Th>Product</Th>
-            <Th>Equation</Th>
+          <Tr className="flex justify-center">
+            <Th>Math Test</Th>
           </Tr>
         </Thead>
         <Tbody>

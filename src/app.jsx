@@ -109,11 +109,13 @@ function App() {
                     </ListItem>
                     <ListItem>
                       Every row contains 100 static, hidden{' '}
-                      <Code>{'<td />'}</Code> nodes to stimulate diffing in
-                      order to measure performance.{' '}
+                      <Code>{'<td />'}</Code> nodes and 50{' '}
+                      <Code>{'<div />'}</Code> to stimulate diffing in order to
+                      measure performance.{' '}
                       <u>
                         This is not representative of real React apps, it's just
-                        to show where Million.js performs well.
+                        to show where Million.js performs better than React,
+                        which is in high static but pinpoint dynamic content.
                       </u>
                     </ListItem>
                     <ListItem>

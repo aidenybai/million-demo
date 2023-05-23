@@ -17,8 +17,8 @@ dependencies:
     specifier: ^10.8.4
     version: 10.8.4(react-dom@18.2.0)(react@18.3.0-next-8e17bfd14-20230322)
   million:
-    specifier: ^2.3.3
-    version: 2.3.3
+    specifier: ^2.4.1
+    version: 2.4.1
   react:
     specifier: 18.3.0-next-8e17bfd14-20230322
     version: 18.3.0-next-8e17bfd14-20230322
@@ -2221,8 +2221,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /million@2.3.3:
-    resolution: {integrity: sha512-QIp7jSCazfpMTnLa21yifS/bATFQtTRleoC+Qy7ivfI5KgO+z/p3OSAPaZb00adbK2ljrD7lvjxw5CaU1maozA==}
+  /million@2.4.1:
+    resolution: {integrity: sha512-j+B7NyTNtHHQad9bjH4iP0DvYqHCrIGvayk7JEwcRK/q5XTwvBU6krdzJDuHrRuurjCdvrkwi0CKR3xrxw7s4g==}
     dependencies:
       '@babel/core': 7.21.3
       '@babel/plugin-syntax-jsx': 7.21.4(@babel/core@7.21.3)
